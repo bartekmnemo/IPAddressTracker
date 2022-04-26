@@ -133,7 +133,7 @@ h1 {
 
 @media screen and (max-width: 1080px) {
   .resultsPanel {
-    padding: 20px;
+    padding: 15px;
   }
 
   .result {
@@ -155,12 +155,25 @@ h1 {
 
 @media screen and (max-width: 840px) {
   .resultsPanel {
-    width: 80%;
-    bottom: -115px;
+    width: 90%;
+    bottom: -40px;
+  }
+  .resultsPanel .result p:first-child {
+    font-size: 0.7em;
+  }
+
+  .resultsPanel .result p:nth-child(2) {
+    font-size: 1em;
   }
 }
 
 @media screen and (max-width: 720px) {
+  .result {
+    padding: 15px;
+  }
+  .resultsPanel {
+    padding: 10px;
+  }
   .resultsPanel .result p:first-child {
     font-size: 0.8em;
   }
@@ -180,27 +193,24 @@ h1 {
   }
 
   .resultsPanel {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    bottom: -240px;
+    bottom: -30px;
     width: 80%;
-    padding: 20px 0;
+    padding: 20px;
   }
 
   .resultsPanel .result p:first-child {
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.6em;
   }
 
   .resultsPanel .result p:nth-child(2) {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 700;
   }
 
   .result {
     border: none;
-    padding: 10px 0;
+    padding: 0 10px;
   }
   .attribution {
     font-size: 12px;
@@ -208,38 +218,54 @@ h1 {
   }
 }
 
-@media screen and (max-width: 320px) {
-  .search {
-    width: 80%;
-  }
-
-  .search input {
-    font-size: 4vw;
-  }
-
+@media screen and (max-width: 534px) {
   .resultsPanel {
-    flex-direction: column;
-    bottom: -120px;
+    flex-direction: row;
     width: 80%;
+    bottom: -30px;
   }
-
   .resultsPanel .result p:first-child {
-    font-size: 2vw;
+    font-size: 0.7em;
   }
 
   .resultsPanel .result p:nth-child(2) {
-    font-size: 4vw;
-  }
-  .result {
-    padding: 5px;
-  }
-  .attribution {
-    font-size: 3vw;
-    /* letter-spacing: 1px; */
-    padding: 0;
+    font-size: 0.9em;
   }
 
-  h1 {
-    font-size: 8vw;
+  @media screen and (max-width: 420px) {
+    .resultsPanel {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      padding: 20px 0;
+      bottom: -130px;
+    }
+    .search {
+      width: 80%;
+    }
+
+    .search input {
+      font-size: 4vw;
+    }
+
+    .resultsPanel .result p:first-child {
+      font-size: 2vw;
+    }
+
+    .resultsPanel .result p:nth-child(2) {
+      font-size: 4vw;
+    }
+    .result {
+      padding: 5px;
+    }
+    .attribution {
+      font-size: 3vw;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 8vw;
+    }
   }
 }
