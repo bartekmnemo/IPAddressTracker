@@ -41,7 +41,8 @@ const getMap = () => {
 };
 function getIpInfo(ipAdress) {
   fetch(
-    `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAdress}`
+    `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAdress}`,
+    { cache: "no-cache" }
   )
     .then((res) => res.json())
     .then((data) => {
@@ -61,7 +62,7 @@ function getIpInfo(ipAdress) {
 }
 
 const getUserIp = () => {
-  fetch("https://api.ipify.org/?format=json")
+  fetch("https://api.ipify.org/?format=json", { cache: "no-cache" })
     .then((response) => response.json())
     .then((data) => {
       userIpAdress = data;
