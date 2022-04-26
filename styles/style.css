@@ -9,9 +9,9 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 35vh;
-  max-width: 1400px;
+  justify-content: center;
+  height: 250px;
+  width: 100%;
   margin: 0 auto;
   background: url(../images/pattern-bg.png);
   background-position: center;
@@ -29,8 +29,8 @@ header {
   width: 100%;
   border-radius: 15px;
   border: none;
-  font-weight: 500;
-  color: hsl(0, 0%, 17%);
+  font-weight: 700;
+  color: #2b2b2b;
 }
 
 .search > input:focus {
@@ -40,6 +40,7 @@ header {
 .search {
   position: relative;
   width: 500px;
+  margin: 20px 0;
 }
 
 .btnSearch {
@@ -51,7 +52,7 @@ header {
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
   border: none;
-  background-color: hsl(0, 0%, 17%);
+  background-color: #000;
   transition: 0.2s;
   cursor: pointer;
 }
@@ -62,24 +63,24 @@ header {
 
 .resultsPanel {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   position: absolute;
-  bottom: -10vh;
+  bottom: calc(-133px / 2);
   background-color: white;
   display: flex;
-  max-width: 1440px;
-  padding: 50px 0;
+  padding: 20px;
   border-radius: 10px;
   color: hsl(0, 0%, 17%);
-  font-size: 24px;
   font-weight: 700;
+  max-width: 1200px;
 }
 
 .result {
   text-align: left;
-  padding: 0 100px 0 20px;
-  border-right: 1px solid hsl(0, 0%, 59%);
+  border-right: 1px solid hsla(0, 0%, 59%, 0.425);
+  padding-right: 80px;
+  padding-left: 20px;
 }
 
 .resultsPanel .result:last-child {
@@ -99,17 +100,16 @@ header {
   color: hsl(0, 0%, 17%);
 }
 
-section {
-  background-color: rgb(64, 64, 255);
-  height: 70vh;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+  z-index: -2;
 }
