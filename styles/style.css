@@ -18,7 +18,7 @@ header {
   background-size: cover;
   font-family: "Rubik", sans-serif;
   padding-bottom: 100px;
-  padding-top: 5vh;
+  padding-top: 40px;
   text-align: center;
   color: white;
 }
@@ -239,7 +239,7 @@ h1 {
       justify-content: center;
       width: 80%;
       padding: 20px 0;
-      bottom: -130px;
+      bottom: -140px;
     }
     .search {
       width: 80%;
