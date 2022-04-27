@@ -40,7 +40,6 @@ const getMap = () => {
   }
 };
 
-// https://geo.ipify.org/api/v2/country,city?apiKey=at_OFj4mpAD7hFRCENf4FSGUTCJJ0kDO&domain=google.com
 function getIpInfo(ipAdress) {
   if (ipAdress.match(/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/)) {
     url = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=`;
@@ -48,7 +47,12 @@ function getIpInfo(ipAdress) {
     url = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&domain=`;
   }
   fetch(url + ipAdress, { cache: "no-cache" })
-    .then((res) => res.json())
+    .then((res) => {
+      if (res.ok) return res.json();
+      else {
+        return null;
+      }
+    })
     .then((data) => {
       ipAdressP.textContent = data.ip;
       locationP.textContent = `${data.location.city}, ${
