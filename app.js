@@ -39,11 +39,15 @@ const getMap = () => {
     searchActive = false;
   }
 };
+
+// https://geo.ipify.org/api/v2/country,city?apiKey=at_OFj4mpAD7hFRCENf4FSGUTCJJ0kDO&domain=google.com
 function getIpInfo(ipAdress) {
-  fetch(
-    `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAdress}`,
-    { cache: "no-cache" }
-  )
+  if (ipAdress.match(/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/)) {
+    url = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=`;
+  } else {
+    url = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&domain=`;
+  }
+  fetch(url + ipAdress, { cache: "no-cache" })
     .then((res) => res.json())
     .then((data) => {
       ipAdressP.textContent = data.ip;
